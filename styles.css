@@ -4,10 +4,16 @@ body
 }
 
 
-
+#titleBar
+{
+    top: 0;
+    padding-top: 0px;
+    justify-content: flex-end;
+    background-color: aliceblue;
+}
 h1
 {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 10vw;
     font: 70px Arial, sans-serif;
     font-weight: 1000;
@@ -15,8 +21,9 @@ h1
 
 h2
 {
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     font-size: 10vw;
     font: 50px Arial, sans-serif;
     font-weight: 1000;
+    padding-left: 100x;
 }
