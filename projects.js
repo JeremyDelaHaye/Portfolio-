@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', function()
         const linkP = document.createElement('p')
         linkP.textContent = `${projeects.link}`;
         projectsDiv.appendChild(linkP)
+
+        projectCards.appendChild(projectsDiv);
     })
 });
  
