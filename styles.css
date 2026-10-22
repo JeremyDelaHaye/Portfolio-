@@ -11,6 +11,25 @@ body
     justify-content: flex-end;
     background-color: aliceblue;
 }
+
+#projectCardHolder
+{
+    overflow: hidden;
+    width: 2000px;
+    justify-content: center;
+}
+
+#projectCards
+{
+    color: aliceblue;
+    background-color: rgb(108, 100, 100);
+    justify-content: center;
+    padding-left: 40px;
+    padding-right: 10px;
+    float: left;
+    width: 50px;
+}
+
 h1
 {
     color: rgb(0, 0, 0);

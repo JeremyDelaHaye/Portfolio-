@@ -1,15 +1,18 @@
 document.addEventListener('DOMContentLoaded', function()
 {
+    console.log('l')
     let projects = 
     [
+        {name: 'Project 1', image: 'image', description: 'Project 1 description', link: 'link'},
         {name: 'Project 1', image: 'image', description: 'Project 1 description', link: 'link'}
     ];
 
-    const projectCards = document.getElementById('projectCards')
+    const projectCards = document.getElementById('projectCardHolder')
 
     projects.forEach(function(projects)
     {
         const projectsDiv = document.createElement('div')
+        projectsDiv.id = 'projectCards'
         projectsDiv.className = 'projectDiv';
 
         const nameP = document.createElement('p')
@@ -21,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function()
         projectsDiv.appendChild(imageImg);
 
         const descriptionP = document.createElement('p')
-        descriptionP.textContent = `${projeects.description}`;
+        descriptionP.textContent = `${projects.description}`;
         projectsDiv.appendChild(nameP)
         
         const linkP = document.createElement('p')
-        linkP.textContent = `${projeects.link}`;
+        linkP.textContent = `${projects.link}`;
         projectsDiv.appendChild(linkP)
 
         projectCards.appendChild(projectsDiv);
