@@ -1,8 +1,17 @@
 body
 {
     background-color: black;
+    font-family: Arial, sans-serif;
 }
 
+#blobCanvas
+{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
 
 #titleBar
 {
@@ -12,38 +21,57 @@ body
     background-color: aliceblue;
 }
 
-#projectCardHolder
+#aboutMeBar
 {
-    overflow: hidden;
-    width: 2000px;
-    justify-content: center;
+    color: rgb(255, 255, 255);
 }
 
-#projectCards
+#projectCardHolder
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 24px;
+    padding: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.projectDiv
 {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px;
     color: aliceblue;
     background-color: rgb(108, 100, 100);
-    justify-content: center;
-    padding-left: 40px;
-    padding-right: 10px;
-   float: left;
-    width: 50px;
+    border-radius: 8px;
+}
+
+.projectDiv img
+{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.projectName
+{
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.projectDiv a
+{
+    color: rgb(255, 255, 255);
+    margin-top: auto;
 }
 
 h1
 {
     color: rgb(0, 0, 0);
-    font-size: 10vw;
-    font: 70px Arial, sans-serif;
-    font-weight: 1000;
-}
-
-h2
-{
-    color: rgb(0, 0, 0);
-    font-size: 10vw;
-    font: 50px Arial, sans-serif;
-    font-weight: 1000;
-    padding-left: 100x;
+    font-family: Arial;
+    font-size: clamp(40px, 10vw, 70px);
+    font-weight: 900;
 }

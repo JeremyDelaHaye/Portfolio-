@@ -1,37 +1,20 @@
-document.addEventListener('DOMContentLoaded', function()
-{
-    console.log('l')
-    let projects = 
-    [
-        {name: 'Project 1', image: 'image', description: 'Project 1 description', link: 'link'},
-        {name: 'Project 1', image: 'image', description: 'Project 1 description', link: 'link'}
-    ];
-
-    const projectCards = document.getElementById('projectCardHolder')
-
-    projects.forEach(function(projects)
+const projects =
+[
+    //game
     {
-        const projectsDiv = document.createElement('div')
-        projectsDiv.id = 'projectCards'
-        projectsDiv.className = 'projectDiv';
+        name: 'Project 1', 
+        image: 'images/project1.png', 
+        description: 'Project 1 description', 
+        link: 'https://example.com',
+        skills: 'Html, css, js'
+    },
 
-        const nameP = document.createElement('p')
-        nameP.textContent = `${projects.name}`;
-        projectsDiv.appendChild(nameP);
+    {
+        name: 'Project 2', 
+        image: 'images/project2.png', 
+        description: 'Project 2 description', 
+        link: 'https://example.com'
+    },
 
-        const imageImg = document.createElement('img')
-        imageImg.textContent = `${projects.image}`;
-        projectsDiv.appendChild(imageImg);
 
-        const descriptionP = document.createElement('p')
-        descriptionP.textContent = `${projects.description}`;
-        projectsDiv.appendChild(nameP)
-        
-        const linkP = document.createElement('p')
-        linkP.textContent = `${projects.link}`;
-        projectsDiv.appendChild(linkP)
-
-        projectCards.appendChild(projectsDiv);
-    })
-});
- 
+];
