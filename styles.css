@@ -1,6 +1,7 @@
 body
 {
-    background-color: black;
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
     font-family: Arial, sans-serif;
 }
 
@@ -13,17 +14,11 @@ body
     z-index: -1;
 }
 
-#titleBar
+#header
 {
-    top: 0;
-    padding-top: 0px;
-    justify-content: flex-end;
-    background-color: aliceblue;
-}
-
-#aboutMeBar
-{
-    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;   /* pushes them to opposite sides */
+    align-items: center;              /* lines them up vertically */
 }
 
 #projectCardHolder
@@ -38,13 +33,19 @@ body
 
 .projectDiv
 {
+    opacity: 0.5;
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 16px;
     color: aliceblue;
-    background-color: rgb(108, 100, 100);
+    background-color: rgb(235, 85, 90);
     border-radius: 8px;
+}
+
+.projectDiv:hover
+{
+    opacity: 1;
 }
 
 .projectDiv img
@@ -53,6 +54,7 @@ body
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 4px;
+    opacity: 1;
 }
 
 .projectName
@@ -70,7 +72,7 @@ body
 
 h1
 {
-    color: rgb(0, 0, 0);
+    color: aliceblue;
     font-family: Arial;
     font-size: clamp(40px, 10vw, 70px);
     font-weight: 900;

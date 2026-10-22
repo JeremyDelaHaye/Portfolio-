@@ -6,6 +6,7 @@ const projects =
         image: 'images/project1.png', 
         description: 'Project 1 description', 
         link: 'https://example.com',
+        linkReport:'https://example.com',
         skills: 'Html, css, js'
     },
 

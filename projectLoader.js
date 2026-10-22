@@ -27,6 +27,12 @@ document.addEventListener('DOMContentLoaded', function()
         linkA.target = '_blank';
         projectDiv.appendChild(linkA);
 
+        const linkB = document.createElement('b');
+        linkB.href = project.linkReport;
+        linkB.textContent = 'View project report';
+        linkB.target = '_blank';
+        projectDiv.appendChild(linkB);
+
         const skillsUsedP = document.createElement('p')
         skillsUsedP.className = 'projectName';
         skillsUsedP.textContent = project.skills;
