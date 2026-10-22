@@ -17,8 +17,58 @@ body
 #header
 {
     display: flex;
-    justify-content: space-between;   /* pushes them to opposite sides */
-    align-items: center;              /* lines them up vertically */
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 24px;
+}
+
+#titleBar h1
+{
+    margin: 0;
+    line-height: 1;
+}
+
+#titleBar .subtitle
+{
+    margin-top: 30px;   
+}
+
+#mediaLinks
+{
+    display: flex;
+    gap: 25px;
+    color: white;
+    font-size: 36px;
+    line-height: 1;
+    margin-top: 4px;   /* fine-tune so icon tops match the letter tops */
+}
+
+#mediaLinks a
+{
+    color: white;
+}
+
+#aboutMe::after
+{
+    content: '|';
+    animation: blink 0.8s step-end infinite;
+}
+
+#aboutMe:done:after
+{
+    content: none;
+}
+
+
+#aboutMeContent::after
+{
+    content: '|';
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink
+{
+    50% { opacity: 0; }
 }
 
 #projectCardHolder
@@ -54,7 +104,6 @@ body
     aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 4px;
-    opacity: 1;
 }
 
 .projectName
@@ -73,7 +122,6 @@ body
 h1
 {
     color: aliceblue;
-    font-family: Arial;
     font-size: clamp(40px, 10vw, 70px);
     font-weight: 900;
 }

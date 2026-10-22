@@ -42,3 +42,29 @@ document.addEventListener('DOMContentLoaded', function()
         projectCards.appendChild(projectDiv);
     });
 });
+
+function typeText(element, text, speed,keepCursor)
+{
+    let i = 0;
+
+    function addLetter()
+    {
+        if (i < text.length)
+        {
+            element.textContent += text[i];
+            i++;
+            setTimeout(addLetter, speed);
+        }
+        
+        else if (!keepCursor)
+        {
+            element.classList.add('done');
+        }
+        
+    }
+
+    addLetter();
+}
+
+typeText(document.getElementById('aboutMe'), 'About me:', 120,false);
+typeText(document.getElementById('aboutMeContent'), '', 120,true);
