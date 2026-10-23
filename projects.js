@@ -3,7 +3,7 @@ const projects =
     //game
     {
         name: '2D Top-Down Shooter',
-        images: ['assets/shooter1.png', 'assets/shooter2.png', 'assets/shooter3.png'],
+        images: ['assets/shooter1.png', 'assets/shooter2.png'],
         description: 'Developed a prototype top-down shooter in p5.js during my first year of university, inspired by Hotline Miami. ' +
             'Focused on implementing core mechanics and technical features rather than visual design. ' +
             'Created a ray-casting system and grid-based collision detection. ' +
@@ -38,5 +38,14 @@ const projects =
         link: 'https://github.com/JeremyDelaHaye/HelpDeskTicketing',
         linkReport: 'https://example.com',
         skills: 'HTML, CSS, JavaScript, PHP, MySQL'
+    },
+
+    {
+        name: ' Game coming soon',
+        images: [''],
+        description: 'N/A',
+        link: 'N/A',
+        linkReport: 'N/A',
+        skills: 'N/A'
     }
 ];
