@@ -1,9 +1,63 @@
+:root
+{
+    --text: aliceblue;
+    --glass-filter: hue-rotate(180deg) brightness(0.5);
+    --radius: 8px;
+    --gap: 24px;
+}
+
 body
 {
-    background-color: rgb(0, 0, 0);
-    color: aliceblue;
+    background-color: black;
+    color: var(--text);
     font-family: Arial, sans-serif;
 }
+
+h1
+{
+    font-size: clamp(40px, 10vw, 70px);
+    font-weight: 900;
+}
+
+a
+{
+    color: white;
+}
+
+/* Shared styles */
+
+.glass
+{
+    backdrop-filter: var(--glass-filter);
+    -webkit-backdrop-filter: var(--glass-filter);
+    border-radius: var(--radius);
+    padding: 16px;
+}
+
+.textBlock
+{
+    max-width: 60ch;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+.typing::after
+{
+    content: '|';
+    animation: blink 0.8s step-end infinite;
+}
+
+.typing.done::after
+{
+    content: none;
+}
+
+@keyframes blink
+{
+    50% { opacity: 0; }
+}
+
+/* Background */
 
 #blobCanvas
 {
@@ -14,12 +68,14 @@ body
     z-index: -1;
 }
 
+/* Header */
+
 #header
 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 24px;
+    padding: var(--gap);
 }
 
 #titleBar h1
@@ -28,74 +84,48 @@ body
     line-height: 1;
 }
 
-#titleBar .subtitle
-{
-    margin-top: 30px;   
-}
-
 #mediaLinks
 {
     display: flex;
     gap: 25px;
-    color: white;
     font-size: 36px;
     line-height: 1;
-    margin-top: 4px;   /* fine-tune so icon tops match the letter tops */
+    margin-top: 4px;
 }
 
-#mediaLinks a
-{
-    color: white;
-}
+/* Main layout */
 
-#aboutMe::after
+#mainContent
 {
-    content: '|';
-    animation: blink 0.8s step-end infinite;
-}
-
-#aboutMe:done:after
-{
-    content: none;
-}
-
-
-#aboutMeContent::after
-{
-    content: '|';
-    animation: blink 0.8s step-end infinite;
-}
-
-@keyframes blink
-{
-    50% { opacity: 0; }
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--gap);
+    padding: var(--gap);
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
 }
 
 #projectCardHolder
 {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 24px;
-    padding: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: var(--gap);
 }
+
+#aboutMe
+{
+    margin-top: 0;
+    line-height: 1;
+}
+
+/* Project cards */
 
 .projectDiv
 {
-    opacity: 0.5;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    padding: 16px;
-    color: aliceblue;
-    background-color: rgb(235, 85, 90);
-    border-radius: 8px;
-}
-
-.projectDiv:hover
-{
-    opacity: 1;
 }
 
 .projectDiv img
@@ -115,13 +145,33 @@ body
 
 .projectDiv a
 {
-    color: rgb(255, 255, 255);
     margin-top: auto;
 }
 
-h1
+.slider
 {
-    color: aliceblue;
-    font-size: clamp(40px, 10vw, 70px);
-    font-weight: 900;
+    position: relative;
+}
+
+.sliderBtn
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.sliderBtn.prev { left: 8px; }
+.sliderBtn.next { right: 8px; }
+
+@media (max-width: 800px)
+{
+    #mainContent { grid-template-columns: 1fr; }
 }
