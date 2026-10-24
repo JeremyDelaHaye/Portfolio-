@@ -1,16 +1,30 @@
+*, *::before, *::after
+{
+    box-sizing: border-box;   /* padding no longer adds to widths, so edges line up */
+}
+
 :root
 {
     --text: aliceblue;
     --glass-filter: hue-rotate(180deg) brightness(0.5);
-    --radius: 8px;
+    --radius: 0px;
     --gap: 24px;
+    --content-width: 1200px;
+    --font-pixel: 'Doto', monospace;
+    --font-body: 'JetBrains Mono', monospace;
 }
 
 body
 {
     background-color: black;
     color: var(--text);
-    font-family: Arial, sans-serif;
+    font-family: var(--font-body);
+}
+
+/* Pixel font only for headings and short labels */
+h1, h2, .projectName, .projectSkills
+{
+    font-family: var(--font-pixel);
 }
 
 h1
@@ -37,7 +51,7 @@ a
 .textBlock
 {
     max-width: 60ch;
-    line-height: 1.5;
+    line-height: 1.6;
     white-space: pre-line;
 }
 
@@ -68,14 +82,16 @@ a
     z-index: -1;
 }
 
-/* Header */
+/* Header: same width as the content column below */
 
 #header
 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: var(--gap);
+    width: calc(100% - 2 * var(--gap));
+    max-width: calc(var(--content-width) - 2 * var(--gap));
+    margin: var(--gap) auto 0;
 }
 
 #titleBar h1
@@ -101,7 +117,7 @@ a
     grid-template-columns: 2fr 1fr;
     gap: var(--gap);
     padding: var(--gap);
-    max-width: 1200px;
+    max-width: var(--content-width);
     margin: 0 auto;
     align-items: start;
 }
@@ -113,10 +129,17 @@ a
     gap: var(--gap);
 }
 
+/* About sidebar */
+
+#aboutMe, #skills
+{
+    font-size: 2rem;
+    line-height: 1;
+}
+
 #aboutMe
 {
     margin-top: 0;
-    line-height: 1;
 }
 
 /* Project cards */
@@ -128,14 +151,6 @@ a
     gap: 10px;
 }
 
-.projectDiv img
-{
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    border-radius: 4px;
-}
-
 .projectName
 {
     font-weight: bold;
@@ -143,33 +158,25 @@ a
     margin: 0;
 }
 
-.projectDiv a
+.projectDiv p
 {
-    margin-top: auto;
+    line-height: 1.6;
 }
 
-.slider
+.projectLinks
 {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: auto;   /* pins links and skills to the bottom of the card */
 }
 
-.sliderBtn
+.projectSkills
 {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    font-size: 20px;
-    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 4px 0 0;
 }
-
-.sliderBtn.prev { left: 8px; }
-.sliderBtn.next { right: 8px; }
 
 @media (max-width: 800px)
 {

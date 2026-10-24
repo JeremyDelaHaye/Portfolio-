@@ -21,33 +21,6 @@ document.addEventListener('DOMContentLoaded', function()
         imageImg.alt = project.name;
         slider.appendChild(imageImg);
 
-        let currentImage = 0;
-
-        function showImage(index)
-        {
-            // wraps around, so going past the last image returns to the first
-            currentImage = (index + project.images.length) % project.images.length;
-            imageImg.src = project.images[currentImage];
-        }
-
-        if (project.images.length > 1)
-        {
-            const prevBtn = document.createElement('button');
-            prevBtn.className = 'sliderBtn prev';
-            prevBtn.textContent = '‹';
-            prevBtn.addEventListener('click', function() { showImage(currentImage - 1); });
-            slider.appendChild(prevBtn);
-
-            const nextBtn = document.createElement('button');
-            nextBtn.className = 'sliderBtn next';
-            nextBtn.textContent = '›';
-            nextBtn.addEventListener('click', function() { showImage(currentImage + 1); });
-            slider.appendChild(nextBtn);
-        }
-
-        projectDiv.appendChild(slider);
-        showImage(0);
-
         // Description
         const descriptionP = document.createElement('p');
         descriptionP.textContent = project.description;

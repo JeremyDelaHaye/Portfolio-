@@ -2,7 +2,7 @@ const canvas = document.getElementById('blobCanvas');
 const ctx = canvas.getContext('2d');
 
 const SCALE = 3;        // render at 1/3 resolution; lower = sharper grain, slower
-const GRAIN = 0;     // noise strength
+const GRAIN = 0.1;     // noise strength
 const MAX_F = 2;        // field value that maps to the end of the palette
 const PALETTE_SIZE = 512;
 
