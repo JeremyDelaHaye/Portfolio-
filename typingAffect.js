@@ -36,7 +36,13 @@ const skillsText =
     '• 3D modelling and animation in Blender\n' +
     '• Photo editing in Photoshop\n' +
     '• Video editing in Premiere Pro and animation in After Effects';
-typeText(document.getElementById('name'), 'Jeremy De la Haye', 120,true)
-typeText(document.getElementById('aboutMe'), 'About me:', 120,false);
-typeText(document.getElementById('aboutMeContent'), aboutMeText, 2,true);
-typeText(document.getElementById('skillsContent'), skillsText, 2,true);
+
+const heroText = 'Interactive Media student · seeking a software development placement from Sept 2027';
+
+
+typeText(document.getElementById('name'), 'Jeremy De la Haye', 10,true)
+typeText(document.getElementById('aboutMe'), 'About me:', 10,false);
+typeText(document.getElementById('heroStatement'), heroText, 10,false);
+typeText(document.getElementById('aboutMeContent'), aboutMeText, 10,false);
+typeText(document.getElementById('skills'),'Skills:',10,false);
+typeText(document.getElementById('skillsContent'),skillsText,10,false);
