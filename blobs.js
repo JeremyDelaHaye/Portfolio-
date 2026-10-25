@@ -73,6 +73,7 @@ function update()
             b.x += (mouseX - b.x) * 0.08;
             b.y += (mouseY - b.y) * 0.08;
         }
+        
         else
         {
             // Random wandering
