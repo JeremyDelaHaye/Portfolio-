@@ -88,7 +88,7 @@ a
     z-index: 0;
 }
 
-#header, #mainContent
+#header, #mainContent, #hero
 {
     position: relative;
     z-index: 1;   /* above the canvas */
@@ -120,12 +120,28 @@ a
     margin-top: 4px;
 }
 
+/* hero*/
+#hero
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: calc(100% - 2 * var(--gap));
+    max-width: calc(var(--content-width) - 2 * var(--gap));
+    margin: var(--gap) auto 0;
+}
+
+#heroStatement
+{
+    margin:0;
+}
+
 /* Layout */
 
 #mainContent
 {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
     gap: var(--gap);
     padding: var(--gap);
     max-width: var(--content-width);
@@ -159,6 +175,16 @@ a
     gap: 10px;
 }
 
+
+
+.titleImageDiv
+{
+    display: flex;
+    justify-content: space-between;   
+    align-items: center;
+}
+
+
 .projectName
 {
     font-size: 1.2rem;
@@ -178,6 +204,84 @@ a
     font-size: 1.1rem;
     margin: 4px 0 0;
 }
+
+/* Title row: name left, image icon right */
+
+.titleImageDiv
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hover preview */
+
+.preview
+{
+    position: relative;
+    display: inline-block;
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.previewPopup
+{
+    position: absolute;
+    top: 100%;                  /* directly below the icon; no gap, or hover breaks */
+    right: 0;                   /* lines up with the icon's right edge, so it stays inside the card */
+    width: min(500px, 70vw);
+    z-index: 10;
+    display: none;
+}
+
+.previewPopup img
+{
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.preview:hover .previewPopup,
+.preview.open .previewPopup
+{
+    display: block;
+}
+
+/* Slider */
+
+.slider
+{
+    position: relative;
+}
+
+.slider img
+{
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    filter: grayscale(1);       /* keeps screenshots on-theme */
+}
+
+.sliderBtn
+{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: 6px;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.sliderBtn.prev { left: 6px; }
+.sliderBtn.next { right: 6px; }
 
 @media (max-width: 800px)
 {

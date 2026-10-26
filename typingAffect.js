@@ -37,7 +37,7 @@ const skillsText =
     '• Photo editing in Photoshop\n' +
     '• Video editing in Premiere Pro and animation in After Effects';
 
-const heroText = 'Interactive Media student · seeking a software development placement from Sept 2027';
+const heroText = 'Interactive Media student · seeking a software development placement in 2027';
 
 
 typeText(document.getElementById('name'), 'Jeremy De la Haye', 10,true)

@@ -3,6 +3,7 @@ const projects =
     //game
     {
         name: '2D Top-Down Shooter',
+        images: ['assets/shooter1.png'],
         description: 'Developed a prototype top-down shooter in p5.js during my first year of university, inspired by Hotline Miami. ' +
             'Focused on implementing core mechanics and technical features rather than visual design. ' +
             'Created a ray-casting system and grid-based collision detection. ' +
@@ -16,6 +17,7 @@ const projects =
     //gym tracker
     {
         name: 'Gym Tracking Website',
+        images:[],
         description: 'Built a full-stack prototype of a gym exercise tracking website. ' +
             'Developed the frontend using HTML, CSS, and JavaScript, with a PHP API and MySQL database for the backend. ' +
             'Designed the database and implemented API endpoints for adding and retrieving data. ' +
@@ -29,6 +31,7 @@ const projects =
     //help desk
     {
         name: 'Help Desk Ticketing Website',
+        images:[],
         description: 'Soon to be a full-stack help desk system. ' +
             'Will be using HTML, CSS, and JavaScript, with a PHP API and MySQL database for the backend. ' +
             'Planning to create a full login system for clients and technicians.',
